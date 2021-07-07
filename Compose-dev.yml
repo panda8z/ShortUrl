@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  shorturl:
+    image: panda8z/surl:latest
+    environment:
+      - DSN=mysql://root:123456@tcp(mysqld:3307)/shorturl?max_conns=20&max_idle_conns=4
+    networks:
+      surl
+    volumes:
+      surl
+
+  mysqld:
+    image: mysql:5.7.32
+    ports:
+      - "3307:3307"
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    networks:
+      - surl
+
+networks:
+  surl:
+
+volumes:
+  surl:

@@ -1,0 +1,6 @@
+FROM golang:1.16.5-buster
+COPY . /home/shorturl
+WORKDIR /home/shorturl
+EXPOSE 8080 8080
+RUN go build -o shorturl main.go && cp shorturl /usr/bin
+ENTRYPOINT [ "shorturl" ]
