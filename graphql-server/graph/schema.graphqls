@@ -1,0 +1,20 @@
+type Query {
+    origin(origin: String!):Url! # 根据 origin 查Url
+    short(short: String!):Url! # 根据 short 查Url
+    check(id: ID!):Url! # 根据 id 查Url
+}
+
+
+type Url {
+  id: ID!
+  short: String!
+  origin: String!
+}
+
+input NewUrl {
+    origin: String!
+}
+
+type Mutation {
+  createUrl(input: NewUrl!): Url!
+}
