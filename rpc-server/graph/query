@@ -1,0 +1,30 @@
+mutation createUrl {
+  createUrl(input: { origin: "http://localhost:8080/admin/bar" }) {
+    id
+    origin
+    short
+  }
+}
+
+query byorigin {
+  origin(origin: "http://localhost:8080/admin/bar") {
+    id
+    origin
+    short
+  }
+}
+
+query byshort {
+  short(short: "c3VybDox") {
+    id
+    origin
+    short
+  }
+}
+
+
+
+serror "github.com/panda8z/shorturl/errors"
+m "github.com/panda8z/shorturl/model"
+
+

@@ -1,0 +1,9 @@
+FROM alpine:3.12
+RUN addgroup -S panda8z; \
+    adduser -S panda8z -G panda8z -D  -h /home/panda8z -s /bin/nologin; \
+    chown -R panda8z:panda8z /home/panda8z
+RUN apk add -U --no-cache ca-certificates
+COPY main /usr/bin/shorturl
+EXPOSE 8080 8080
+USER panda8z
+WORKDIR /home/panda8z
