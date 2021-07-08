@@ -1,0 +1,15 @@
+syntax = "proto3";
+package github.com.panda8z.shorturl.rpc.hello.helloworld;
+option go_package = "rpc/hello/helloworld";
+
+service HelloWorld {
+  rpc Hello(HelloReq) returns (HelloResp);
+}
+
+message HelloReq {
+  string subject = 1;
+}
+
+message HelloResp {
+  string text = 1;
+}

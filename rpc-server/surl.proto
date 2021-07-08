@@ -1,0 +1,24 @@
+syntax = "proto3";
+package github.com.panda8z.shorturl.rpc.surl;
+option go_package = "rpc/surl";
+
+service ShortUrl {
+  rpc SurlOrigin(SurlOriginReq) returns (SurlOriginResp);
+  rpc SurlShort(SurlShortReq) returns (SurlShortResp);
+}
+
+message SurlOriginReq {
+  string url = 1;
+}
+
+message SurlOriginResp {
+  string url = 1;
+}
+
+message SurlShortReq {
+  string url = 1;
+}
+
+message SurlShortResp {
+  string url = 1;
+}
