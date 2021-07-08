@@ -1,6 +1,6 @@
 # Golang 极简短链接生成器
 
-可以提供三中服务形式 RESTful GraphQL RPC
+可以提供三种服务提供方式 RESTful GraphQL RPC
 
 ## Complete
 
